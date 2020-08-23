@@ -32,12 +32,12 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api'], function () {
         // Route::post('student','AuthController@studentRegister');
     });
     //student routes
-    Route::group(['prefix' => 'student', 'middleware' => 'auth:students_api'], function () {
+    Route::group(['prefix' => 'student', 'middleware' => ['auth:students_api']], function () {
     });
     //admin routes
-    Route::group(['prefix' => 'admin', 'middleware' => 'auth:admins_api'], function () {
+    Route::group(['prefix' => 'admin', 'middleware' => ['auth:admins_api']], function () {
     });
     //professor routes
-    Route::group(['prefix' => 'professor', 'middleware' => 'auth:professors_api'], function () {
+    Route::group(['prefix' => 'professor', 'middleware' => ['auth:professors_api']], function () {
     });
 });
